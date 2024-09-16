@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+
+.bokses {
+    width: 320px;
+    height: 400px;
+    margin: 30px auto 0;
+
+    .boks::selection {
+        background-color: black;
+        color: red;
+    }
+
+    &:hover .boks {
+        transform: rotateY(180deg);
+
+    }
+
+    .boks {
+        transition-duration: 2s;
+        transform: perspective(700px);
+        transform-style: preserve-3d;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border: 3px solid red;
+        text-align: center;
+        position: relative;
+
+        .front,
+        .back {
+            backface-visibility: hidden;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            padding-top: 20px;
+        }
+
+        .front {
+            background: linear-gradient(to right, green, grey);
+        }
+
+        .back {
+            transform: rotatey(180deg);
+        }
+
+        img {
+            object-fit: cover;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+}
